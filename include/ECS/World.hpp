@@ -41,7 +41,7 @@ public:
 	/**
 	 * @brief Create a world entity.
 	 * 
-	 * @return Entity::Entity* The entity to create.
+	 * @return Entity::Entity* The created entity.
 	 */
 	Entity* createEntity();
 
