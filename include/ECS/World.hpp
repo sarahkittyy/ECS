@@ -6,7 +6,7 @@
 #include <vector>
 
 #include "ECS/Components/Components.hpp"
-#include "ECS/Entities/Entities.hpp"
+#include "ECS/Entity.hpp"
 #include "ECS/Systems/Systems.hpp"
 
 namespace ECS
@@ -37,7 +37,7 @@ public:
 	 * 
 	 * @return Entity::Entity* The entity to create.
 	 */
-	Entity::Entity* createEntity();
+	Entity* createEntity();
 
 	/**
 	 * @brief Configure a system to be used.
@@ -75,7 +75,7 @@ public:
 	 * @param fn The function to run through. 
 	 */
 	template <typename... Comps>
-	void each(std::function<void(Entity::Entity& e)> fn)
+	void each(std::function<void(Entity& e)> fn)
 	{
 		//For every entity...
 		for (auto& [id, e] : mEntities)
@@ -96,7 +96,7 @@ private:
 	 * @brief A map of entity IDs to their entities.
 	 * 
 	 */
-	std::unordered_map<long long, Entity::Entity> mEntities;
+	std::unordered_map<long long, Entity> mEntities;
 	long long mNextID;   ///< The next entity ID.
 
 	/**

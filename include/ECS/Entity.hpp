@@ -9,7 +9,7 @@
 #include "ECS/Components/Component.hpp"
 #include "ECS/TypeInfo.hpp"
 
-namespace ECS::Entity
+namespace ECS
 {
 
 /**

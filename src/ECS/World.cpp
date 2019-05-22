@@ -17,9 +17,9 @@ void World::update(float msElapsed)
 	}
 }
 
-Entity::Entity* World::createEntity()
+Entity* World::createEntity()
 {
-	mEntities[++mNextID] = Entity::Entity();
+	mEntities[++mNextID] = Entity();
 	return &mEntities[mNextID];
 }
 

@@ -1,5 +1,5 @@
 #include "ECS/Components/Components.hpp"
-#include "ECS/Entities/Entities.hpp"
+#include "ECS/Entity.hpp"
 #include "ECS/Systems/Systems.hpp"
 
 #include "ECS/TypeInfo.hpp"
