@@ -23,4 +23,12 @@ Entity* World::createEntity()
 	return &mEntities[mNextID];
 }
 
+void World::all(std::function<void(Entity& e)> fn)
+{
+	for (auto& [id, e] : mEntities)
+	{
+		fn(e);
+	}
+}
+
 }

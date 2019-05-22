@@ -89,7 +89,12 @@ public:
 		}
 	}
 
-
+	/**
+	 * @brief Run a function on all entities.
+	 * 
+	 * @param fn The function to run.
+	 */
+	void all(std::function<void(Entity& e)> fn);
 
 private:
 	/**
