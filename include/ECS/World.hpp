@@ -40,6 +40,22 @@ public:
 	Entity* createEntity();
 
 	/**
+	 * @brief Get entities by ID.
+	 * 
+	 * @param ID The ID of the entity.
+	 * @return Entity* That entity.
+	 * @return nullptr if no entity was found.
+	 */
+	Entity* getEntityByID(long long ID);
+
+	/**
+	 * @brief Remove the entity with the given ID.
+	 * 
+	 * @param ID The ID of the entity to remove.
+	 */
+	void removeEntity(long long ID);
+
+	/**
 	 * @brief Configure a system to be used.
 	 * 
 	 * @tparam Sys The system to use in this world.

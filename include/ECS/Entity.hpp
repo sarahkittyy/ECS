@@ -22,8 +22,16 @@ public:
 	/**
 	 * @brief Default entity constructor.
 	 * 
+	 * @param ID The entity's ID.
 	 */
-	Entity();
+	Entity(long long ID);
+
+	/**
+	 * @brief Get the entity's ID.
+	 * 
+	 * @return const long long The entity's ID.
+	 */
+	const long long getID();
 
 	/**
 	 * @brief Add a component to the 
@@ -125,6 +133,7 @@ public:
 private:
 	/// All of this entity's components.
 	std::unordered_map<TypeInfo, Component::Component> mComponents;
+	const long long mID;   ///< The entity's ID.
 };
 
 }
