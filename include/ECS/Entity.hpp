@@ -20,6 +20,12 @@ class Entity
 {
 public:
 	/**
+	 * @brief Default constructor.
+	 * 
+	 */
+	Entity();
+
+	/**
 	 * @brief Default entity constructor.
 	 * 
 	 * @param ID The entity's ID.
@@ -133,7 +139,7 @@ public:
 private:
 	/// All of this entity's components.
 	std::unordered_map<TypeInfo, Component::Component> mComponents;
-	const long long mID;   ///< The entity's ID.
+	long long mID;   ///< The entity's ID.
 };
 
 }

@@ -3,6 +3,11 @@
 namespace ECS
 {
 
+Entity::Entity()
+	: mID(-1)
+{
+}
+
 Entity::Entity(long long ID)
 	: mID(ID)
 {
