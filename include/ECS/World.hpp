@@ -26,6 +26,12 @@ public:
 	World();
 
 	/**
+	 * @brief Virtual destructor.
+	 * 
+	 */
+	virtual ~World();
+
+	/**
 	 * @brief Update the world.
 	 * 
 	 * @param msElapsed The time to simulate between the last update.
@@ -111,6 +117,15 @@ public:
 	 * @param fn The function to run.
 	 */
 	void all(std::function<void(Entity& e)> fn);
+
+protected:
+	/**
+	 * @brief Overridden by child classes to allow for specialized world types.
+	 * For example, added non-component global objects like a Tilemap.
+	 * 
+	 * @param msElapsed The milliseconds elapsed since last frame.
+	 */
+	virtual void onUpdate(float msElapsed);
 
 private:
 	/**

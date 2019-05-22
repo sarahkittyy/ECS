@@ -8,13 +8,24 @@ World::World()
 	mNextID = 0;
 }
 
+World::~World()
+{
+}
+
 void World::update(float msElapsed)
 {
+	//Call onUpdate().
+	onUpdate(msElapsed);
+
 	//Update each system.
 	for (auto& [info, system] : mSystems)
 	{
 		system->tick(this, msElapsed);
 	}
+}
+
+void World::onUpdate(float msElapsed)
+{
 }
 
 Entity* World::createEntity()
