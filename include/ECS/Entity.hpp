@@ -103,6 +103,25 @@ public:
 		}
 	}
 
+	/**
+	 * @brief Remove the given component from the entity.
+	 * 
+	 * @tparam Comp The component to remove
+	 */
+	template <typename Comp>
+	void remove()
+	{
+		//Get the component info
+		TypeInfo info = &typeid(Comp);
+		//Try to find the info in the map.
+		auto found = mComponents.find(info);
+		if (found != mComponents.end())   //If it's found..
+		{
+			//Remove it
+			mComponents.erase(found);
+		}
+	}
+
 private:
 	/// All of this entity's components.
 	std::unordered_map<TypeInfo, Component::Component> mComponents;
