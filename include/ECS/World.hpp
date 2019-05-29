@@ -97,7 +97,7 @@ public:
 	 * @param fn The function to run through. 
 	 */
 	template <typename... Comps>
-	void each(std::function<void(Entity* e)> fn)
+	void each(std::function<void(Entity& e)> fn)
 	{
 		//For every entity...
 		for (auto& [id, e] : mEntities)
@@ -106,7 +106,7 @@ public:
 			if (e.has<Comps...>())
 			{
 				//Run the function over it.
-				fn(&e);
+				fn(e);
 			}
 		}
 	}
