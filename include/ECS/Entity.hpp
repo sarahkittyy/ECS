@@ -45,10 +45,10 @@ public:
 	 * @tparam Comp The type of component to add. 
 	 * @tparam Args The parameter pack of args to send to the component constructor.
 	 * @param args The arguments to pass to the component constructor.
-	 * @return Component::BaseComponent A pointer to that component.
+	 * @return Comp* A pointer to that component.
 	 */
 	template <typename Comp, typename... Args>
-	Component::Component add(Args&&... args)
+	Comp* add(Args&&... args)
 	{
 		//Get the component info
 		TypeInfo info = &typeid(Comp);

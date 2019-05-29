@@ -54,11 +54,11 @@ void World::removeEntity(long long id)
 	mEntities.erase(id);
 }
 
-void World::all(std::function<void(Entity& e)> fn)
+void World::all(std::function<void(Entity* e)> fn)
 {
 	for (auto& [id, e] : mEntities)
 	{
-		fn(e);
+		fn(&e);
 	}
 }
 
