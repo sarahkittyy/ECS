@@ -116,7 +116,7 @@ public:
 	 * 
 	 * @param fn The function to run.
 	 */
-	void all(std::function<void(Entity* e)> fn);
+	void all(std::function<void(Entity& e)> fn);
 
 protected:
 	/**
